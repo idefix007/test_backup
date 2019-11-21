@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class AuthPage extends StatefulWidget {
   @override
@@ -9,6 +10,19 @@ class AuthPage extends StatefulWidget {
 
 class _AuthpageState extends State<AuthPage> {
   bool _acceptTerms = false;
+
+
+  TextEditingController user=new TextEditingController();
+  TextEditingController pass=new TextEditingController();
+
+  Future<List> _login() async{
+    final response = await http.post("http://10.0.2.2/timesheet_demo/login.php", body:{
+      "username": user.text,
+      "password": pass.text,
+    });
+    print(response.body);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +64,9 @@ class _AuthpageState extends State<AuthPage> {
                 Container(
                   padding: EdgeInsets.only(top: 10, bottom: 10),
                   child: TextField(
+                    controller: user,
                     textInputAction: TextInputAction.none,
+                    style: new TextStyle(color: Colors.white),
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                         hasFloatingPlaceholder: true,
@@ -74,6 +90,8 @@ class _AuthpageState extends State<AuthPage> {
                   height: 25,
                 ),
                 TextField(
+                  controller: pass,
+                  style: new TextStyle(color: Colors.white),
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                       hasFloatingPlaceholder: true,
@@ -125,14 +143,9 @@ class _AuthpageState extends State<AuthPage> {
                   textColor: Colors.white,
                   child: Text('Se connecter'),
                   onPressed: () {
-                    // Navigator.pushReplacement(   // replcet the curent layout unlike push that just creates new page
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (BuildContext cotext) => HomePage()));
 
-                    // Using Routes
-
-                    Navigator.pushNamed(context, '/home');
+                    _login();
+//                    Navigator.pushNamed(context, '/home');
                   },
                 )
               ],
