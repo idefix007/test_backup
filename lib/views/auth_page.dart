@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+
+// lien vers tutoriel connexion flutter Mysql/ LOGIN:
+// https://www.youtube.com/watch?v=yIB4bEFoxyU&feature=youtu.be
+
+
 class AuthPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {

@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_calendar_test/models/client.dart';
 import 'dart:async';
-
-
 import 'clientCard.dart';
 
 class Home extends StatefulWidget {
