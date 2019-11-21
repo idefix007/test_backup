@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_calendar_test/views/auth_page.dart';
 import 'package:flutter_calendar_test/views/timesheet.dart';
 import 'models/client.dart';
 import 'views/home.dart';
@@ -13,16 +14,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Timesheet Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: Home(),
+      home: AuthPage(),
       routes: {
         '/client': (context){
           return Timesheet();
+        },
+        '/home': (context){
+          return Home();
         }
+
+
       },
     );
   }

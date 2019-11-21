@@ -52,9 +52,9 @@ class _HomeState extends State<Home> {
     ),
     ),
 
-floatingActionButton: FloatingActionButton(
-  child: Icon(Icons.add),
-),
+//floatingActionButton: FloatingActionButton(
+//  child: Icon(Icons.add),
+//),
     );
   }
 }
