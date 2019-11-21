@@ -31,11 +31,6 @@ class _AuthpageState extends State<AuthPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   centerTitle: true,
-      //   elevation: 4, // default value
-      //   title: Text('Authenticate'),
-      // ),
       body: Container(
         decoration: BoxDecoration(
           color: Colors.black,
