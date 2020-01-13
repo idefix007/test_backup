@@ -2,19 +2,31 @@
 
 include 'conn.php';
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username1 = $_POST['username'];
+$password1 = $_POST['password'];
 
-$queryResult=$connect->query(
-    "SELECT * FROM users WHERE username=' ".$username."' AND password='".$password."' "
-);
 
-$result=array();
 
-while($fecthData=$queryResult->fetch_assoc()){
-    $result[]=$fecthData;
+$sql1 = "SELECT * FROM users WHERE Username = '".$username1."' && Password = '".$password1."'";
+try {
+    $result1 = $conn->query($sql1);
+
+    $rows = $result1->rowCount();
+    if($rows>0){
+        while($row = $result1->fetch()) {
+            for($i=0; $i<$rows; $i++)
+                {
+                    $result1[] = $fetchData;
+                }
+        }
+
+    }else {
+        echo "0 results";
+    }
+} catch (Exception $e) {
+    die ($e->getMessage() );
 }
 
-echo json_encode($result);
+echo json_encode($result1);
 
 ?>

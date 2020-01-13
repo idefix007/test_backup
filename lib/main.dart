@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: AuthPage(),
+      home: AuthPage(),//Home pour obtenir la page avec le problème de filtre.
       routes: {
         '/client': (context){
           return Timesheet();

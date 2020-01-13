@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 
 // lien vers tutoriel connexion flutter Mysql/ LOGIN:
@@ -25,7 +26,13 @@ class _AuthpageState extends State<AuthPage> {
       "username": user.text,
       "password": pass.text,
     });
+    /*
+    https://medium.com/@santosenoque.ss/how-to-connect-flutter-app-to-mysql-web-server-and-phpmyadmin-e100f47bfb82
+    var data = jsonDecode(response.body);
+    print(data.toString());
+    */
     print(response.body);
+
   }
 
   @override
