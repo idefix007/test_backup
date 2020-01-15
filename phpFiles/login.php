@@ -2,21 +2,22 @@
 
 include 'conn.php';
 
-$username1 = $_POST['username'];
-$password1 = $_POST['password'];
+$username = $_POST['username'];
+$password = $_POST['password'];
 
 
 
-$sql1 = "SELECT * FROM users WHERE username = '".$username1."' && Password = '".$password1."'";
+$sql = "SELECT * FROM users WHERE username = '".$username."' && Password = '".$password."'";
 try {
-    $result1 = $conn->query($sql1);
+    $result = $conn->query($sql);
 
-    $rows = $result1->rowCount();
+    $rows = $result->rowCount();
     if($rows>0){
-        while($row = $result1->fetch()) {
+    $resultArray = array();
+        while($row = $result->fetch()) {
             for($i=0; $i<$rows; $i++)
                 {
-                    $result1[] = $fetchData;
+                    array_push$result1($resultArray, $row[$i]);
                 }
         }
 
@@ -27,6 +28,6 @@ try {
     die ($e->getMessage() );
 }
 
-echo json_encode($result1);
+echo json_encode($resultArray);
 
 ?>
