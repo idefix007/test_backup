@@ -152,7 +152,7 @@ class _AuthpageState extends State<AuthPage> {
                   onPressed: () {
 
                     _login();
-//                    Navigator.pushNamed(context, '/home');
+                    Navigator.pushNamed(context, '/home');
                   },
                 )
               ],
