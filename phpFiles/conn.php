@@ -1,4 +1,9 @@
 <?php
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$databasename = 'testdb';
+
 try
 {
     $conn = new PDO("mysql:host=".$servername.";port=3308;dbname=".$databasename, $username, $password);
