@@ -7,7 +7,7 @@ $password1 = $_POST['password'];
 
 
 
-$sql1 = "SELECT * FROM users WHERE Username = '".$username1."' && Password = '".$password1."'";
+$sql1 = "SELECT * FROM users WHERE username = '".$username1."' && Password = '".$password1."'";
 try {
     $result1 = $conn->query($sql1);
 
