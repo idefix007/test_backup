@@ -10,6 +10,22 @@ import 'views/home.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Connexion',
+      home: new MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget{
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage>{
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
