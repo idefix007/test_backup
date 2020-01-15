@@ -1,8 +1,12 @@
 <?php
+<?php
 $servername = 'localhost';
-$username = 'root';
-$password = '';
+$serverUsername = 'root';
+$serverPassword = '';
 $databasename = 'testdb';
+
+$username = $_POST['username'];
+$password = $_POST['password']
 
 try
 {
