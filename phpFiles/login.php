@@ -30,6 +30,4 @@ try {
     die ($e->getMessage() );
 }
 
-echo json_encode($resultArray);
-
 ?>

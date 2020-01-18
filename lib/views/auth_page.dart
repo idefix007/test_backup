@@ -17,9 +17,10 @@ class AuthPage extends StatefulWidget {
 class _AuthpageState extends State<AuthPage> {
   bool _acceptTerms = false;
 
-
   TextEditingController user=new TextEditingController();
   TextEditingController pass=new TextEditingController();
+
+  String msg = 'bouton de msg';
 
   Future<List> _login() async{
     final response = await http.post("http://10.0.2.2/timesheet_demo/login.php", body:{
@@ -33,10 +34,26 @@ class _AuthpageState extends State<AuthPage> {
     */
     print(response.body);
 
-
-    if(response.body!=null){
-      Navigator.pushNamed(context, '/home');
+    var datauser = json.decode(response.body);
+    print(datauser);
+    if(datauser.length==0){
+      setState(() {
+        msg = "data user length = 0";
+      });
     }
+/*
+    if(response.body==[]){
+      setState(() {
+        msg = "Vous n'êtes pas le bienvenu";
+      });
+    }else{
+      //Navigator.pushNamed(context, '/home');
+      setState(() {
+        msg = "Bienvenu";
+      });
+    }
+
+ */
 
 
 
@@ -157,11 +174,10 @@ class _AuthpageState extends State<AuthPage> {
                   textColor: Colors.white,
                   child: Text('Se connecter'),
                   onPressed: () {
-
                     _login();
-//
                   },
-                )
+                ),
+                Text(msg,style: TextStyle(fontSize: 20.00, color: Colors.red),)
               ],
             ),
           ),
