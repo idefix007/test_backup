@@ -8,16 +8,18 @@ $password = $_POST['password'];
 
 
 $sql = "SELECT * FROM users WHERE username = '".$username."' && Password = '".$password."'";
+
 try {
     $result = $conn->query($sql);
 
     $rows = $result->rowCount();
-    if($rows>0){
+
     $resultArray = array();
+    if($rows>0){
         while($row = $result->fetch()) {
-            for($i=0; $i<$rows; $i++)
+            for($i=0; $i<3; $i++)
                 {
-                    array_push$result1($resultArray, $row[$i]);
+                    array_push($resultArray, $row[$i]);
                 }
         }
 
