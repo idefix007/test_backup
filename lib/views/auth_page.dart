@@ -28,11 +28,19 @@ class _AuthpageState extends State<AuthPage> {
     });
     /*
     https://medium.com/@santosenoque.ss/how-to-connect-flutter-app-to-mysql-web-server-and-phpmyadmin-e100f47bfb82
+    */
     var data = jsonDecode(response.body);
     print(data.toString());
-    */
     print(response.body);
 
+  /*
+    if(json.decode(response.body)!=null){
+      Navigator.pushNamed(context, '/home');
+    }
+
+   */
+
+  return null;
   }
 
   @override
@@ -152,7 +160,6 @@ class _AuthpageState extends State<AuthPage> {
                   onPressed: () {
 
                     _login();
-                    Navigator.pushNamed(context, '/home');
                   },
                 )
               ],
