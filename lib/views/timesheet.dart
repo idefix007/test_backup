@@ -46,7 +46,8 @@ class _TimesheetState extends State<Timesheet> {
               child: DropdownButton<int>(
                 iconEnabledColor: Colors.white,
                 value: month,
-                items: List<int>.generate(DateTime.now().month, (i) => 1+i).map((month) =>
+                items: List<int>.generate(12,
+                        (i) => 1+i).map((month) =>
                     DropdownMenuItem<int>(
                       value: month,
                       child: Text(
