@@ -33,6 +33,10 @@ class _AuthpageState extends State<AuthPage> {
     */
     print(response.body);
 
+    if(response.body!=null){
+      Navigator.pushNamed(context, '/home');
+    }
+
   }
 
   @override
@@ -152,7 +156,7 @@ class _AuthpageState extends State<AuthPage> {
                   onPressed: () {
 
                     _login();
-//                    Navigator.pushNamed(context, '/home');
+//
                   },
                 )
               ],
