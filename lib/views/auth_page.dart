@@ -17,8 +17,8 @@ class AuthPage extends StatefulWidget {
 class _AuthpageState extends State<AuthPage> {
   bool _acceptTerms = false;
 
-  TextEditingController user=new TextEditingController();
-  TextEditingController pass=new TextEditingController();
+  TextEditingController user = new TextEditingController();
+  TextEditingController pass = new TextEditingController();
 
   String msg = 'bouton de msg';
 
@@ -29,33 +29,23 @@ class _AuthpageState extends State<AuthPage> {
     });
     /*
     https://medium.com/@santosenoque.ss/how-to-connect-flutter-app-to-mysql-web-server-and-phpmyadmin-e100f47bfb82
-    var data = jsonDecode(response.body);
-    print(data.toString());
-    */
-    print(response.body);
+*/
 
     var datauser = json.decode(response.body);
     print(datauser);
+
     if(datauser.length==0){
       setState(() {
-        msg = "data user length = 0";
-      });
-    }
-/*
-    if(response.body==[]){
-      setState(() {
-        msg = "Vous n'êtes pas le bienvenu";
+        msg = "Mauvaise connexion";
       });
     }else{
       //Navigator.pushNamed(context, '/home');
       setState(() {
-        msg = "Bienvenu";
+        msg = "Bonne Connexion";
       });
     }
 
  */
-
-
 
   }
 
