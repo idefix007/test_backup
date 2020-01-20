@@ -32,11 +32,13 @@ class _AuthpageState extends State<AuthPage> {
 */
 
     var datauser = json.decode(response.body);
+    print('datauser de Flutter : ');
     print(datauser);
+    print('\n');
 
     if(datauser.length==0){
       setState(() {
-        msg = "Mauvaise connexion";
+        msg = "Vous avez une erreur soit dans votre nom d'utilisateur soit dans votre mot de passe.";
       });
     }else{
       //Navigator.pushNamed(context, '/home');
@@ -44,9 +46,6 @@ class _AuthpageState extends State<AuthPage> {
         msg = "Bonne Connexion";
       });
     }
-
- */
-
   }
 
   @override
