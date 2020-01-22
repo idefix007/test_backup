@@ -1,16 +1,12 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_calendar_test/views/auth_page.dart';
 import 'package:flutter_calendar_test/views/timesheet.dart';
 import 'models/client.dart';
 import 'views/home.dart';
 
-
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -20,12 +16,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget{
+class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>{
+class _MyHomePageState extends State<MyHomePage> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -35,18 +31,16 @@ class _MyHomePageState extends State<MyHomePage>{
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: AuthPage(),//Home pour obtenir la page avec le problème de filtre.
+      home: AuthPage(),
+      //Home pour obtenir la page avec le problème de filtre.
       routes: {
-        '/client': (context){
+        '/client': (context) {
           return Timesheet();
         },
-        '/home': (context){
+        '/home': (context) {
           return Home();
         }
-
-
       },
     );
   }
 }
-

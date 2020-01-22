@@ -5,7 +5,7 @@ include 'conn.php';
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$sql = "SELECT * FROM users WHERE username = '".$username."' && Password = '".$password."'";
+$sql = "SELECT * FROM users WHERE username = BINARY '".$username."' && Password = BINARY '".$password."'";
 
 try {
 

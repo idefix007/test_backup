@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-
 // lien vers tutoriel connexion flutter Mysql/ LOGIN:
 // https://www.youtube.com/watch?v=yIB4bEFoxyU&feature=youtu.be
-
 
 class AuthPage extends StatefulWidget {
   @override
@@ -22,8 +20,9 @@ class _AuthpageState extends State<AuthPage> {
 
   String msg = 'bouton de msg';
 
-  Future<List> _login() async{
-    final response = await http.post("http://10.0.2.2/timesheet_demo/login.php", body:{
+  Future<List> _login() async {
+    final response =
+        await http.post("http://10.0.2.2/timesheet_demo/login.php", body: {
       "username": user.text,
       "password": pass.text,
     });
@@ -32,18 +31,16 @@ class _AuthpageState extends State<AuthPage> {
 */
 
     var datauser = json.decode(response.body);
-    print('datauser de Flutter : ');
-    print(datauser);
-    print('\n');
 
-    if(datauser.length==0){
+    if (datauser.length == 0) {
       setState(() {
-        msg = "Vous avez une erreur soit dans votre nom d'utilisateur soit dans votre mot de passe.";
+        msg =
+            "Vous avez une erreur soit dans votre nom d'utilisateur soit dans votre mot de passe.";
       });
-    }else{
-      //Navigator.pushNamed(context, '/home');
+    } else {
       setState(() {
-        msg = "Bonne Connexion";
+        var username = datauser['Username'];
+        Navigator.pushNamed(context, '/home');
       });
     }
   }
@@ -129,9 +126,7 @@ class _AuthpageState extends State<AuthPage> {
                   },
                 ),
                 GestureDetector(
-                  onTap: () {
-                    
-                  },
+                  onTap: () {},
                   child: Container(
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 25, right: 5),
@@ -166,7 +161,10 @@ class _AuthpageState extends State<AuthPage> {
                     _login();
                   },
                 ),
-                Text(msg,style: TextStyle(fontSize: 20.00, color: Colors.red),)
+                Text(
+                  msg,
+                  style: TextStyle(fontSize: 20.00, color: Colors.red),
+                )
               ],
             ),
           ),
