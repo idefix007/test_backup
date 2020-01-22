@@ -1,6 +1,9 @@
+import 'dart:convert';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'package:flutter_calendar_test/main.dart';
+
 
 
 // lien vers tutoriel connexion flutter Mysql/ LOGIN:
@@ -31,21 +34,27 @@ class _AuthpageState extends State<AuthPage> {
     https://medium.com/@santosenoque.ss/how-to-connect-flutter-app-to-mysql-web-server-and-phpmyadmin-e100f47bfb82
 */
 
-    var datauser = json.decode(response.body);
+
+    var datauser=json.decode(response.body);
     print('datauser de Flutter : ');
-    print(datauser);
+
     print('\n');
+print(datauser);
 
     if(datauser.length==0){
+
       setState(() {
         msg = "Vous avez une erreur soit dans votre nom d'utilisateur soit dans votre mot de passe.";
       });
     }else{
-      //Navigator.pushNamed(context, '/home');
+      Navigator.pushNamed(context, '/home');
       setState(() {
         msg = "Bonne Connexion";
+        username=datauser['Username'];
+
       });
     }
+
   }
 
   @override

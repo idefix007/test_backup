@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_calendar_test/models/client.dart';
 import 'package:flutter_calendar_test/views/timesheet.dart';
 
+
 class ClientCard extends StatelessWidget {
 
   final Client client;

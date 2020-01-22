@@ -8,7 +8,7 @@ import 'views/home.dart';
 
 
 void main() => runApp(MyApp());
-
+String username='';
 class MyApp extends StatelessWidget {
 
   @override
@@ -42,6 +42,9 @@ class _MyHomePageState extends State<MyHomePage>{
         },
         '/home': (context){
           return Home();
+        },
+        '/auth': (context){
+          return AuthPage();
         }
 
 
