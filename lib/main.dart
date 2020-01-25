@@ -4,11 +4,13 @@ import 'package:flutter_calendar_test/views/auth_page.dart';
 import 'package:flutter_calendar_test/views/timesheet.dart';
 import 'models/client.dart';
 import 'views/home.dart';
+import 'package:flutter_calendar_test/views/_AddData.dart';
 
 
 
 void main() => runApp(MyApp());
 String username='';
+String idUsername;
 class MyApp extends StatelessWidget {
 
   @override
@@ -45,6 +47,9 @@ class _MyHomePageState extends State<MyHomePage>{
         },
         '/auth': (context){
           return AuthPage();
+        },
+        '/register': (context){
+          return AddData();
         }
 
 
